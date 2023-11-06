@@ -25,3 +25,14 @@ Now you can call the endpoint via any language you like. In this repo, I put a p
 What you need to do is to change the url.  
 
 ![Screenshot 2023-11-05 171110](https://github.com/koji/llm_api_template/assets/474225/240bd549-60c9-4332-8b69-f54802c60b7b)
+
+
+## How to use a different model?
+If you want to use a different model such as llama2-7b, mistral-7b, etc, you will need to download the model from  https://huggingface.co/TheBloke and modify the jupyter notebook a little bit.
+
+```py
+from llama_cpp import Llama
+llm = Llama(model_path="zephyr-7b-alpha.Q5_K_M.gguf") # 👈 you will need to change this model path.
+output = llm("Q: can you write a python script for fizz buzz? A: ", max_tokens=2048, stop=["Q:", "\n"], echo=True)
+print(output)
+```
