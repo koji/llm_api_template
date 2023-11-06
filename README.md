@@ -9,18 +9,25 @@ The base jupyter notebook uses [zephyr-7b](https://huggingface.co/TheBloke/zephy
 - Google account for Google colab https://colab.google/
 - ngrok account https://ngrok.com
 
-#### step0. create the above accounts  
-#### step1. Copy the jupyter notebook
-#### step2. Create a secreat key
+### step0. create the above accounts  
+### step1. Copy the jupyter notebook
+### step2. Create a secreat key
 There is the key icon in Google colab's sidebar. You will need to add your token as a secret key. In the jupyter notebook, I named `NGROK`. You can change that into anything you want.    
-#### step3. Run the jupyter notebook
+### step3. Run the jupyter notebook
 After setting a new secreat key, you can run the jupyter notebook to run the API server.
-#### step4. Check the API server
+### step4. Check the API server
 If everything works properly, you can acces https://ngrok_address/docs and you will see something like 👇  
 You can see the all available endpoints. 
 ![Screenshot 2023-11-05 193747](https://github.com/koji/llm_api_template/assets/474225/561830f6-f3a7-4c71-bc39-c857c8eb7ad9)
 
-#### step5. Call the endpoint
+**Do not run the last two lines**  
+The first one is to kill FastAPI server and the second one is to kill ngrok.
+```shell
+!pkill uvicorn
+!pkill ngrok
+```
+
+### step5. Call the endpoint
 Now you can call the endpoint via any language you like. In this repo, I put a python code as a sample.  
 What you need to do is to change the url.  
 
